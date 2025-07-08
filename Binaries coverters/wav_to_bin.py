@@ -1,12 +1,11 @@
-import wave
+def wav8bit_to_bin(input_wav, output_bin):
+    with open(input_wav, 'rb') as wav_file:
+        wav_file.seek(44)  # Skip the standard 44-byte header
+        raw_data = wav_file.read()  # Get the raw PCM data
 
-# Abre archivo WAV 8-bit mono
-with wave.open('Bad Apple!!.wav', 'rb') as wav_in:
-    assert wav_in.getsampwidth() == 1  # 8-bit = 1 byte
-    assert wav_in.getnchannels() == 1  # mono
+    with open(output_bin, 'wb') as bin_file:
+        bin_file.write(raw_data)
 
-    frames = wav_in.readframes(wav_in.getnframes())
+    print(f"8-bit PCM data extracted to '{output_bin}'")
 
-# Guarda solo los datos de audio en un archivo binario
-with open('audio.bin', 'wb') as bin_out:
-    bin_out.write(frames)
+wav8bit_to_bin("audio.wav", "audio_16K.bin")
