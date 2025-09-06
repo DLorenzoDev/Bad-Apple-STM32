@@ -1,0 +1,7 @@
+../Core/Src/flashSPI.c:14:13:FLASH_CS_LOW	1
+../Core/Src/flashSPI.c:15:13:FLASH_CS_HIGH	1
+../Core/Src/flashSPI.c:17:13:SPI_FLASH_WriteEnable	1
+../Core/Src/flashSPI.c:24:6:SPI_FLASH_Init	1
+../Core/Src/flashSPI.c:26:6:SPI_FLASH_EraseSector	1
+../Core/Src/flashSPI.c:35:6:SPI_FLASH_Write	2
+../Core/Src/flashSPI.c:51:6:SPI_FLASH_Read	1

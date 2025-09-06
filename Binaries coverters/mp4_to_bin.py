@@ -29,9 +29,6 @@ while cap.isOpened():
         value=0
     )
 
-    # Invertir color si es necesario (negro = 1, blanco = 0)
-    padded = 255 - padded
-
     # Empaquetar 1 bit por píxel (cada fila → 16 bytes)
     packed = np.packbits(padded, axis=1)
     frame_data = packed.flatten()
